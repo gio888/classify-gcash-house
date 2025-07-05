@@ -1,0 +1,1 @@
+# GnuCash Transaction Classifier Package
