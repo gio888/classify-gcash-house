@@ -12,8 +12,8 @@ from pathlib import Path
 from collections import defaultdict, Counter
 import csv
 
-# Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+# Add src to path (go up one level to project root, then into src)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from classifier import ClassifierFactory
 
@@ -26,7 +26,8 @@ async def analyze_backlog():
     
     # File paths
     input_csv = "/Users/gio/Library/CloudStorage/GoogleDrive-gbacareza@gmail.com/My Drive/Money/House Expenses/House Kitty Transactions - Gcash 2024-03 to 2025-06-18.csv"
-    output_csv = "backlog_classified.csv"
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    output_csv = os.path.join(project_root, "outputs", "analysis", "backlog_classified.csv")
     
     try:
         # Verify input file exists
@@ -50,8 +51,9 @@ async def analyze_backlog():
         
         # Create classifier
         print("🏭 Creating classifier...")
+        chart_path = os.path.join(project_root, "chart-of-accounts.txt")
         classifier = await ClassifierFactory.create_minimal_classifier(
-            chart_of_accounts_path="chart-of-accounts.txt"
+            chart_of_accounts_path=chart_path
         )
         print("✅ Classifier created successfully")
         print()

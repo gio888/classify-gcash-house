@@ -10,8 +10,8 @@ import sys
 import os
 from pathlib import Path
 
-# Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+# Add src to path (go up one level to project root, then into src)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from classifier import ClassifierFactory
 
@@ -22,9 +22,10 @@ async def process_csv_pipeline():
     print("🔄 GnuCash Transaction Classifier - CSV Processing Pipeline")
     print("=" * 70)
     
-    # File paths
-    input_csv = "sample_transactions.csv"
-    output_csv = "classified_transactions.csv"
+    # File paths (relative to project root)
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    input_csv = os.path.join(project_root, "tests", "sample_transactions.csv")
+    output_csv = os.path.join(project_root, "outputs", "test_runs", "classified_transactions.csv")
     
     try:
         # Verify input file exists
@@ -38,8 +39,9 @@ async def process_csv_pipeline():
         
         # Create classifier
         print("🏭 Creating classifier...")
+        chart_path = os.path.join(project_root, "chart-of-accounts.txt")
         classifier = await ClassifierFactory.create_minimal_classifier(
-            chart_of_accounts_path="chart-of-accounts.txt"
+            chart_of_accounts_path=chart_path
         )
         print("✅ Classifier created successfully")
         

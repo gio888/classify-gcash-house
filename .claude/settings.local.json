@@ -6,7 +6,8 @@
       "Bash(python3:*)",
       "Bash(source:*)",
       "Bash(mv:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
