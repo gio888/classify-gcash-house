@@ -6,7 +6,7 @@ A production-ready Python classifier that processes CSV transactions and outputs
 
 ### Quick Start
 ```bash
-cd /Users/gio/Code/classify-gcash-house
+cd /path/to/classify-gcash-house
 ./classify_transactions.py --auto-house
 ```
 
@@ -126,7 +126,7 @@ python scripts/example_usage.py
 ### First-Time Setup
 ```bash
 # Clone/download the project
-cd /Users/gio/Code/classify-gcash-house
+cd /path/to/classify-gcash-house
 
 # Install dependencies
 pip install -r requirements.txt
@@ -145,7 +145,7 @@ pip install -r requirements.txt
 ## Configuration
 
 ### Input/Output Locations
-- **Input folder**: `/Users/gio/Library/CloudStorage/GoogleDrive-gbacareza@gmail.com/My Drive/Money/House Expenses/`
+- **Input folder**: `/path/to/GoogleDrive-your-email@gmail.com/My Drive/Money/House Expenses/`
 - **Main script output**: Same Google Drive folder (for easy GnuCash import)
 - **Development outputs**: `outputs/` folder (analysis results, test runs)
 - **Auto-detection**: Finds newest CSV, excludes "For Import" files
@@ -173,13 +173,13 @@ pip install -r requirements.txt
 **"Google Drive folder not found"**
 ```bash
 # Check if Google Drive is synced
-ls "/Users/gio/Library/CloudStorage/GoogleDrive-gbacareza@gmail.com/My Drive/Money/House Expenses/"
+ls "/path/to/GoogleDrive-your-email@gmail.com/My Drive/Money/House Expenses/"
 ```
 
 **"Could not import classifier module"**
 ```bash
 # Make sure you're in the project root
-cd /Users/gio/Code/classify-gcash-house
+cd /path/to/classify-gcash-house
 
 # Install dependencies
 pip install -r requirements.txt

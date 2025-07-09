@@ -59,6 +59,9 @@ logs/
 api_keys.txt
 config.ini
 
+# Claude Code settings
+.claude/
+
 # Generated output files - All outputs/ folder contents
 outputs/
 

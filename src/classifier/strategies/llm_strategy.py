@@ -124,9 +124,9 @@ class LLMClassificationStrategy(BaseClassificationStrategy):
         You are a financial transaction classifier specialized in GnuCash accounting.
         
         Key Classification Rules:
-        1. Staff names (ara, michelle, marie) → Expenses:Household Staff:[Name]:*
-        2. Child name (alessi) → Expenses:Childcare:*
-        3. Pet name (shadow) → Expenses:Household Supplies:Pet Expenses
+        1. Staff names (staff1, staff2, staff3) → Expenses:Household Staff:[Name]:*
+        2. Child name (child1) → Expenses:Childcare:*
+        3. Pet name (pet1) → Expenses:Household Supplies:Pet Expenses
         4. Food/grocery stores → Expenses:Food:*
         5. Medical/pharmacy → Expenses:Health:*
         6. Transportation → Expenses:Transportation:*
